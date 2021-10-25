@@ -31,3 +31,6 @@
 
 en:
   hello: "Hello world"
+  home:
+    index:
+      welcome: 'Welcome to HB FOOD!'
