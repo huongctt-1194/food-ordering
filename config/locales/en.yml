@@ -34,3 +34,14 @@ en:
   home:
     index:
       welcome: 'Welcome to HB FOOD!'
+      title: 'HOME'
+  layouts:
+    navigation:
+      home: 'Home'
+      categories: 'Categories'
+  flash:
+    category:
+      success: 'Category was successfully created'
+      notfound: 'Can not find this category'
+
+
