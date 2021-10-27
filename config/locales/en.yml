@@ -57,6 +57,8 @@ en:
       notfound: 'Can not find this food'
       delete: 'Delete successfully'
       notdelete: 'Can not delete this food'
+    address:
+      success: 'Address was successfully created'
   foods:
     index:
       category: 'Category'
@@ -73,6 +75,12 @@ en:
       category: 'Category'
     index:
       categories: 'Categories'
+  order_addresses:
+    new:
+      title: 'Create new address'
+      address: 'Address'
+      address_placeholder: 'Enter a address'
+      address_using: 'I am using this address'
 
 
 

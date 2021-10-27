@@ -16,8 +16,8 @@ class ApplicationController < ActionController::Base
   end
 
   def require_admin
-    return if !current_user.admin?
-    
+    return if current_user.admin?
+
     flash[:notice] = t 'flash.admin'
     redirect_to root_url
   end
