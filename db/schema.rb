@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_26_102005) do
+ActiveRecord::Schema.define(version: 2021_10_27_072850) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -36,6 +36,40 @@ ActiveRecord::Schema.define(version: 2021_10_26_102005) do
     t.index ["food_id"], name: "index_images_on_food_id"
   end
 
+  create_table "order_addresses", force: :cascade do |t|
+    t.string "address"
+    t.boolean "is_using", default: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_order_addresses_on_user_id"
+  end
+
+  create_table "order_items", force: :cascade do |t|
+    t.integer "quantity"
+    t.integer "unitprice"
+    t.integer "user_id", null: false
+    t.integer "food_id", null: false
+    t.integer "order_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["food_id"], name: "index_order_items_on_food_id"
+    t.index ["order_id"], name: "index_order_items_on_order_id"
+    t.index ["user_id"], name: "index_order_items_on_user_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.datetime "order_time"
+    t.datetime "receive_time"
+    t.integer "totalprice"
+    t.string "address"
+    t.integer "status"
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -52,4 +86,9 @@ ActiveRecord::Schema.define(version: 2021_10_26_102005) do
   end
 
   add_foreign_key "images", "foods"
+  add_foreign_key "order_addresses", "users"
+  add_foreign_key "order_items", "foods"
+  add_foreign_key "order_items", "orders"
+  add_foreign_key "order_items", "users"
+  add_foreign_key "orders", "users"
 end
