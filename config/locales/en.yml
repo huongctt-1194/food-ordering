@@ -31,7 +31,15 @@
 
 en:
   hello: "Hello world"
-  home:
+  nav:
+    home: "Home"
+    categories: "Categories"
+    managepage: "Manage page"
+    newcategory: "New category"
+    newfood: "New food"
+    login: "Log in"
+    logout: "Log out"
+  homes:
     index:
       welcome: 'Welcome to HB FOOD!'
       title: 'HOME'
@@ -40,8 +48,32 @@ en:
       home: 'Home'
       categories: 'Categories'
   flash:
+    admin: 'Only admin can do this action'
     category:
       success: 'Category was successfully created'
       notfound: 'Can not find this category'
+    food:
+      success: 'Food was successfully created'
+      notfound: 'Can not find this food'
+      delete: 'Delete successfully'
+      notdelete: 'Can not delete this food'
+  foods:
+    index:
+      category: 'Category'
+      description: 'Description: '
+      price: 'Price: '
+    new:
+      name: 'Name'
+      description: 'Description'
+      price: 'Price'
+  categories:
+    new:
+      name: 'Category name'
+    show:
+      category: 'Category'
+    index:
+      categories: 'Categories'
+
+
 
 

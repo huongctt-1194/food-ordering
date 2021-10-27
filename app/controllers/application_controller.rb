@@ -14,4 +14,11 @@ class ApplicationController < ActionController::Base
   def default_url_options
     {locale: I18n.locale}
   end
+
+  def require_admin
+    return if !current_user.admin?
+    
+    flash[:notice] = t 'flash.admin'
+    redirect_to root_url
+  end
 end

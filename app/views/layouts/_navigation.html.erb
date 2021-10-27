@@ -7,27 +7,28 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <%= link_to "Home", root_url, class: "nav-link"%>
+        <%= link_to t("nav.home"), root_url, class: "nav-link"%>
       </li>
       <li class="nav-item">
-        <%= link_to 'Categories', categories_path, class: "nav-link"%>
+        <%= link_to t('nav.categories'), categories_path, class: "nav-link"%>
       </li>
       <% if user_signed_in? && current_user.admin? %>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Manage page
+          <%= t('managepage') %>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <%= link_to "New category", new_category_path, class: "dropdown-item"%>
+          <%= link_to t('nav.newcategory'), new_category_path, class: "dropdown-item"%>
+          <%= link_to t('nav.newfood'), new_food_path, class: "dropdown-item"%>
         </div>
       </li>
       <% end %>
 
       <li class="nav-item">
         <% if user_signed_in?  %>
-          <%= link_to 'Log out', destroy_user_session_path,:method => :delete , class: "nav-link"%>
+          <%= link_to t('nav.logout'), destroy_user_session_path,:method => :delete , class: "nav-link"%>
         <% else %>
-          <%= link_to 'Log in', new_user_session_path, class: "nav-link"%>
+          <%= link_to t('nav.login'), new_user_session_path, class: "nav-link"%>
         <% end %>
       </li>
     </ul>
