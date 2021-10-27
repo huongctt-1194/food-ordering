@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
     devise_for :users
-    root to: "home#index"
+    root to: "foods#index"
     resources :categories
     resources :foods
 

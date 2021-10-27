@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  before_action :require_admin, only: [:create]
 
   def new
     @category = Category.new
@@ -21,6 +22,7 @@ class CategoriesController < ApplicationController
       flash[:notice] = t 'flash.category.notfound'
       redirect_to root_url
     end
+    @foods = @category.foods
   end
 
   def index
