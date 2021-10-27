@@ -6,4 +6,10 @@ class User < ApplicationRecord
   has_many :order_addresses
   has_many :order_items
   has_many :orders
+
+  def add_using_address(order_address)
+    self.order_addresses.update_all is_using: false
+    order_address.is_using = true
+    order_address.save
+  end
 end
