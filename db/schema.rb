@@ -46,8 +46,8 @@ ActiveRecord::Schema.define(version: 2021_10_27_072850) do
   end
 
   create_table "order_items", force: :cascade do |t|
-    t.integer "quantity"
-    t.integer "unitprice"
+    t.integer "quantity", default: 0
+    t.integer "unitprice", default: 0
     t.integer "user_id", null: false
     t.integer "food_id", null: false
     t.integer "order_id", null: false
@@ -61,9 +61,9 @@ ActiveRecord::Schema.define(version: 2021_10_27_072850) do
   create_table "orders", force: :cascade do |t|
     t.datetime "order_time"
     t.datetime "receive_time"
-    t.integer "totalprice"
+    t.integer "totalprice", default: 0
     t.string "address"
-    t.integer "status"
+    t.integer "status", default: 0
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

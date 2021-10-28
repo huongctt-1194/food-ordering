@@ -15,7 +15,24 @@
             <% end %>
             <div class = "mt-4">
               <% if user_signed_in? && current_user.admin? %>
-                <%= link_to "Delete", food_path(food), class: "btn btn-outline-danger", method: :delete, data: {confirm: "Are you sure?"} %>
+                <%= link_to t('foods.index.delete'), food_path(food), class: "btn btn-outline-danger", method: :delete, data: {confirm: t('flash.sure')} %>
+              <% end %>
+            </div>
+            <div class = "mt-4">
+              <% @order_item = OrderItem.new %>
+              <% if user_signed_in? && !current_user.admin? %>
+                <%= form_with(model: @order_item, class: "shadow p-3 mb-3 rounded", local: true) do |f| %>
+                  <div class="form-group row">
+                    <%= f.label :quantity, t('.quantity'), class: "col-2 col-form-label text-dark" %>
+                    <div class="col-10">
+                      <%= f.text_field :quantity, class: "form-control shadow rounded" %>
+                    </div>
+                  </div>
+                  <%= f.hidden_field :food_id, value: food.id %>
+                  <div class="form-group row justify-content-center">
+                    <%= f.submit class: "btn btn-outline-dark btn-lg" %>
+                  </div>
+                <% end %>
               <% end %>
             </div>
           </div>

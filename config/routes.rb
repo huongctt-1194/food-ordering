@@ -4,7 +4,9 @@ Rails.application.routes.draw do
     root to: "foods#index"
     resources :categories
     resources :foods
-    resources :order_addresses 
+    resources :order_addresses
+    resources :order_items
+    resources :orders
 
   end
 end
