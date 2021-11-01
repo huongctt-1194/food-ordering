@@ -1,18 +1,22 @@
 class OrderAddressesController < ApplicationController
+  before_action :find_order, only: :create
   def new
     @order_address = OrderAddress.new
   end
 
   def create
     @order_address = current_user.order_addresses.build(address_params)
-    if @order_address.save
-      if params[:order_address][:is_using]
-        current_user.add_using_address(@order_address)
+    respond_to do |format|
+      if @order_address.save
+        if params[:order_address][:is_using]
+          current_user.add_using_address(@order_address)
+        end
+        format.html { redirect_to edit_order_path(@order), notice: "ok"}
+        format.js
+      else
+        format.html { render :new }
+        format.js
       end
-      flash[:notice] = t 'flash.address.success'
-      redirect_to root_url
-    else
-      render 'new'
     end
   end
 
@@ -20,5 +24,12 @@ class OrderAddressesController < ApplicationController
 
   def address_params
     params.require(:order_address).permit :address
+  end
+
+  def find_order
+    @order = current_user.orders.find_by  status: :init
+    return if @order.present?
+
+    @order = current_user.orders.build()
   end
 end

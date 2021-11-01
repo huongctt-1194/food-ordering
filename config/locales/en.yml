@@ -62,6 +62,13 @@ en:
       success: 'Address was successfully created'
     item:
       success: 'Add items successfully'
+    orderitem:
+      success: 'Order was successfully created'
+      notfound: 'Can not find this order'
+      delete: 'Delete successfully'
+      notdelete: 'Can not delete this order'
+    order:
+      success: 'Successfully'
   foods:
     index:
       category: 'Category'
@@ -86,7 +93,18 @@ en:
       address: 'Address'
       address_placeholder: 'Enter a address'
       address_using: 'I am using this address'
-
-
-
-
+  orders:
+    show:
+      price: 'Price'
+      quantity: 'Quantity'
+      delete: 'Delete'
+      buy: 'BUY'
+      total: 'Total'
+    edit:
+      title: 'Place an order'
+      newaddress: 'Create a new address'
+      chooseaddress: 'Choose your address'
+  users:
+    show:
+      status1: 'Order was created, please wait until the restaurant accept your order'
+      total: 'Total'
