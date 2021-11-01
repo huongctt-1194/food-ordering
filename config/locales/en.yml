@@ -49,6 +49,7 @@ en:
       categories: 'Categories'
   flash:
     admin: 'Only admin can do this action'
+    sure: 'Are you sure'
     category:
       success: 'Category was successfully created'
       notfound: 'Can not find this category'
@@ -59,11 +60,15 @@ en:
       notdelete: 'Can not delete this food'
     address:
       success: 'Address was successfully created'
+    item:
+      success: 'Add items successfully'
   foods:
     index:
       category: 'Category'
       description: 'Description: '
       price: 'Price: '
+      delete: 'Delete'
+      quantity: 'Quantity'
     new:
       name: 'Name'
       description: 'Description'
