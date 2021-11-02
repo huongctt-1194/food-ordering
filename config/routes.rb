@@ -6,7 +6,11 @@ Rails.application.routes.draw do
     resources :foods
     resources :order_addresses
     resources :order_items
-    resources :orders
+    resources :users
+    resources :orders, only: [:edit, :update, :destroy]
+    scope "/orders" do
+      get "cart", to: "orders#show"
+    end
 
   end
 end
