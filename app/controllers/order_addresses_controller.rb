@@ -13,6 +13,7 @@ class OrderAddressesController < ApplicationController
         end
         format.html { redirect_to edit_order_path(@order), notice: "ok"}
         format.js
+        format.json
       else
         format.html { render :new }
         format.js
