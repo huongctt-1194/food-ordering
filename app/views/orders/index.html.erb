@@ -17,11 +17,15 @@
               </div>
             <% end %>
             <h3 class="card-header font-italic"><%= t('total') %> : <%= order.totalprice %></h3>
-            <% if order.status == "accepted" %>
+            <% if order.status == "created" %>
             <div class="form-group row justify-content-center">
-              <%= form_with(class: "shadow p-3 mb-3 rounded", local: true, :url => {:controller => :orders, :action => :confirm, :id => order}) do |f| %>
-                <%= f.hidden_field :status, value: 'confirmed' %>
-                  <%= f.submit "I received the food", class: "btn btn-outline-dark btn-lg" %>
+              <%= form_with(class: "shadow p-3 mb-3 rounded", local: true, :url => { :action => :accept, :id => order}) do |f| %>
+                <%= f.hidden_field :status, value: 'accepted' %>
+                  <%= f.submit "Accept", class: "btn btn-outline-dark btn-lg" %>
+              <% end %>
+              <%= form_with(class: "shadow p-3 mb-3 rounded", local: true, :url => { :action => :accept, :id => order}) do |f| %>
+                <%= f.hidden_field :status, value: 'declined' %>
+                  <%= f.submit "Decline", class: "btn btn-outline-dark btn-lg" %>
               <% end %>
             </div>
             <% end %>

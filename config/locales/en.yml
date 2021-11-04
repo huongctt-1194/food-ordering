@@ -39,6 +39,7 @@ en:
     newfood: "New food"
     login: "Log in"
     logout: "Log out"
+    myorders: "My orders"
   homes:
     index:
       welcome: 'Welcome to HB FOOD!'
@@ -104,7 +105,11 @@ en:
       title: 'Place an order'
       newaddress: 'Create a new address'
       chooseaddress: 'Choose your address'
+    index:
+      status: 'Status'
+      total: 'Total'
+      accept: 'Accept'
   users:
     show:
-      status1: 'Order was created, please wait until the restaurant accept your order'
+      status: 'Status'
       total: 'Total'
