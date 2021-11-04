@@ -39,6 +39,7 @@ en:
     newfood: "New food"
     login: "Log in"
     logout: "Log out"
+    myorders: "My orders"
   homes:
     index:
       welcome: 'Welcome to HB FOOD!'
@@ -49,6 +50,7 @@ en:
       categories: 'Categories'
   flash:
     admin: 'Only admin can do this action'
+    sure: 'Are you sure'
     category:
       success: 'Category was successfully created'
       notfound: 'Can not find this category'
@@ -57,11 +59,24 @@ en:
       notfound: 'Can not find this food'
       delete: 'Delete successfully'
       notdelete: 'Can not delete this food'
+    address:
+      success: 'Address was successfully created'
+    item:
+      success: 'Add items successfully'
+    orderitem:
+      success: 'Order was successfully created'
+      notfound: 'Can not find this order'
+      delete: 'Delete successfully'
+      notdelete: 'Can not delete this order'
+    order:
+      success: 'Successfully'
   foods:
     index:
       category: 'Category'
       description: 'Description: '
       price: 'Price: '
+      delete: 'Delete'
+      quantity: 'Quantity'
     new:
       name: 'Name'
       description: 'Description'
@@ -73,7 +88,28 @@ en:
       category: 'Category'
     index:
       categories: 'Categories'
-
-
-
-
+  order_addresses:
+    new:
+      title: 'Create new address'
+      address: 'Address'
+      address_placeholder: 'Enter a address'
+      address_using: 'I am using this address'
+  orders:
+    show:
+      price: 'Price'
+      quantity: 'Quantity'
+      delete: 'Delete'
+      buy: 'BUY'
+      total: 'Total'
+    edit:
+      title: 'Place an order'
+      newaddress: 'Create a new address'
+      chooseaddress: 'Choose your address'
+    index:
+      status: 'Status'
+      total: 'Total'
+      accept: 'Accept'
+  users:
+    show:
+      status: 'Status'
+      total: 'Total'
