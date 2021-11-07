@@ -22,6 +22,7 @@ class FoodsController < ApplicationController
   end
 
   def show
+    @reviews = @food.reviews.all.order(created_at: :desc)
   end
 
   def destroy
@@ -40,7 +41,7 @@ class FoodsController < ApplicationController
   end
 
   def find_food
-    @food = Food.find_by(params[:id])
+    @food = Food.find(params[:id])
     return if @food.present?
 
     flash[:notice] = t 'flash.food.notfound'

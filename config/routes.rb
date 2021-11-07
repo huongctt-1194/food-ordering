@@ -8,12 +8,12 @@ Rails.application.routes.draw do
     resources :order_items
     resources :users
     resources :orders, only: [:edit, :update, :destroy, :index]
+    resources :reviews, only: [:new, :create]
     scope "/orders" do
       get "cart", to: "orders#show"
       post "accept", to: "orders#accept"
       post "add_address", to: "orders#create_address"
       post "confirm", to: "orders#confirm"
     end
-
   end
 end

@@ -14,7 +14,6 @@ class OrdersController < ApplicationController
     @order_addresses = current_user.order_addresses
   end
 
-  #chua xong
   def create_address
     @order_address = current_user.order_addresses.build(address_params)
     respond_to do |format|
