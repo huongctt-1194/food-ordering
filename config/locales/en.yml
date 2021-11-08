@@ -51,6 +51,7 @@ en:
   flash:
     admin: 'Only admin can do this action'
     sure: 'Are you sure'
+    success: 'Successfully'
     category:
       success: 'Category was successfully created'
       notfound: 'Can not find this category'
@@ -81,6 +82,10 @@ en:
       name: 'Name'
       description: 'Description'
       price: 'Price'
+    show:
+      review: 'REVIEW'
+      rate: 'Rate'
+      comment: 'Comment'
   categories:
     new:
       name: 'Category name'
@@ -113,3 +118,8 @@ en:
     show:
       status: 'Status'
       total: 'Total'
+  reviews:
+    new:
+      title: 'Write your review'
+      comment: 'Comment'
+      rate: 'Rate'

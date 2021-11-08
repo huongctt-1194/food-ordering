@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :order_addresses
   has_many :order_items
   has_many :orders
+  has_many :reviews
 
   def add_using_address(order_address)
     self.order_addresses.update_all is_using: false

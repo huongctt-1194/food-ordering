@@ -25,6 +25,11 @@
               <% end %>
             </div>
             <% end %>
+            <% if order.status == "confirmed" %>
+            <div class="form-group row justify-content-center">
+              <%= link_to "Review", new_review_path(:order => order.id) %>
+            </div>
+            <% end %>
           </div>
         </div>
       </div>

@@ -4,7 +4,7 @@
     <div class="col-10">
       <div class ="shadow p-3 mb-3 bg-info rounded text-light" >
         <%= form_for(:order_address, url: add_address_path, method: :post, remote: true) do |f| %>
-        <h4><%= t('.newaddress') %></h4>
+          <h4><%= t('.newaddress') %></h4>
           <div class="form-group row">
             <%= f.label :address, t(".address"), class: "col-2 col-form-label text-light" %>
             <div class="col-10">
