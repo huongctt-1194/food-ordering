@@ -8,6 +8,8 @@ gem 'devise'
 gem 'rails-i18n'
 gem 'config'
 gem 'carrierwave', '~> 2.0'
+gem "ransack"
+gem 'kaminari'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'

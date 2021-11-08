@@ -18,7 +18,13 @@ class FoodsController < ApplicationController
   end
 
   def index
-    @foods = Food.all.order(name: :asc)
+    @q = Food.ransack(params[:q])
+    @foods = @q.result
+    if params[:q].present? && !params[:q][:price].empty?
+      range = Settings.range_price["range_#{params[:q][:price]}"]
+      @foods = @foods.by_price(range.first, range.last)
+    end
+    @foods = @foods.page(params[:page] || Settings.paginate.default_page).per(params[:page_size] || Settings.paginate.default_per_page)
   end
 
   def show
