@@ -73,11 +73,18 @@ en:
       success: 'Successfully'
   foods:
     index:
+      listing: 'Listing foods'
       category: 'Category'
       description: 'Description: '
-      price: 'Price: '
+      price: 'Price '
       delete: 'Delete'
       quantity: 'Quantity'
+      latest: 'Latest'
+      name: 'Name'
+      chooseprice: 'Choose price'
+      price1: '0-50000'
+      price2: '50000-100000'
+      price3: '100000-200000'
     new:
       name: 'Name'
       description: 'Description'
