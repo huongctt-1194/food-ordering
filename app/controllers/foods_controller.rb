@@ -47,10 +47,10 @@ class FoodsController < ApplicationController
   end
 
   def find_food
-    @food = Food.find(params[:id])
+    @food = Food.find_by id: params[:id]
     return if @food.present?
 
-    flash[:notice] = t 'flash.food.notfound'
+    flash[:danger] = t 'flash.food.notfound'
     redirect_to root_url
   end
 end

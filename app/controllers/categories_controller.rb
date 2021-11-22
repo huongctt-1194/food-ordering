@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :require_admin, only: [:create]
+  before_action :find_category, only: [:show]
 
   def new
     @category = Category.new
@@ -16,12 +17,6 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    begin
-      @category = Category.find(params[:id])
-    rescue
-      flash[:notice] = t 'flash.category.notfound'
-      redirect_to root_url
-    end
     @foods = @category.foods
   end
 
@@ -33,5 +28,13 @@ class CategoriesController < ApplicationController
 
   def category_params
       params.require(:category).permit(:name)
+  end
+
+  def find_category
+    @category = Category.find_by id: params[:id]
+    return if @category.present?
+
+    flash[:danger] = t 'flash.category.notfound'
+    redirect_to root_url
   end
 end

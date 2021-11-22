@@ -45,6 +45,7 @@ group :development, :test do
   gem "shoulda-matchers", require: false
   gem "simplecov", require: false
   gem "faker"
+  gem "rails-controller-testing"
 end
 
 group :development do
