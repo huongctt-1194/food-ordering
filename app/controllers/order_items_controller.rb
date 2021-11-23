@@ -53,7 +53,7 @@ class OrderItemsController < ApplicationController
   end
 
   def find_order_item
-    @order_item = current_user.order_items.find_by(params[:id])
+    @order_item = current_user.order_items.find_by(id: params[:id])
     return if @order_item.present?
 
     redirect_to root_url, notice: t('flash.orderitem.notfound')

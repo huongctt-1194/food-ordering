@@ -37,7 +37,7 @@ class OrdersController < ApplicationController
   end
 
   def accept
-    @order = Order.find(params[:id])
+    @order = Order.find_by id: params[:id]
     if @order.update(params.permit(:status))
       flash[:notice] = t('flash.order.success')
       redirect_to orders_path
